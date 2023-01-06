@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+    margin: 0;
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: lightseagreen;
+    padding: 15px;
+}
