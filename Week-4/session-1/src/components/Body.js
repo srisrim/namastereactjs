@@ -2,6 +2,7 @@ import RestaurantCard from "./ReastaurantCard";
 import { restaurantData } from "../constants";
 import React, { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 
 const BodyComponent = () => {
@@ -43,7 +44,9 @@ const BodyComponent = () => {
                 {
                     filteredRestaurants.length === 0 ? <h1>Error</h1> :
                     filteredRestaurants.map((restaurant) => {
-                        return <RestaurantCard {...restaurant?.data} key={restaurant?.data?.id} />
+                        return <Link to={"/restaurant/"+restaurant?.data?.id} key={restaurant?.data?.id}>
+                            <RestaurantCard {...restaurant?.data}  />
+                        </Link> 
                         // up above we actually providing the individual props by just using spred operatopr(...), so in genenral
                         // it does same as <RestaurantCard name={restaurantData[0].data.name} cusines={restaurantData[0].data.cusines} />
                     })
